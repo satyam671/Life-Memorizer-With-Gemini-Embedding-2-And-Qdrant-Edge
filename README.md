@@ -61,6 +61,7 @@ life-memorizer/
     ├── test_step5.py             # Unit tests for Step 5 (quantization & TTL pruning)
     └── test_store_and_recall.py  # Unit tests for Qdrant storage and retrieval
 ```
+Please refer to [ARCHITECTURE-DOCUMENTATION.md](ARCHITECTURE-DOCUMENTATION.md) for a detailed explanation of the system architecture, codebase knowledge graph, component interactions, ingestion and retrieval pipeline knowledge graph and architectural explanations of each code file used in this project.
 
 ## Requirements
 
