@@ -24,7 +24,43 @@ This guide provides step-by-step instructions for running the **Life Memorizer**
 - Gemini Embedding 2: Processes images, audio, and text into a unified semantic space natively—no need to manage separate CLIP, Whisper, and text-embedding pipelines.
 - Qdrant Edge: Run a lightweight, blazing-fast vector database directly on an edge device (like an NVIDIA Jetson, Raspberry Pi, or local mobile device) without needing internet connectivity.
 
+## Repository Structure Documentation
 
+The repository follows a clean, modular python structure optimized for edge execution:
+
+```
+life-memorizer/
+├── .env.example                  # Template for environment variables
+├── .gitignore                    # Git exclude patterns
+├── CONTRIBUTING.md               # Contribution guidelines for developers
+├── LICENSE                       # MIT License
+├── README.md                     # Main documentation & quickstart guide
+├── pyproject.toml                # Build system, metadata, and dependencies
+├── requirements.txt              # Pinned requirements file
+├── ARCHITECTURE-DOCUMENTATION.md # System architecture, codebase knowledge graph and architectural explanation of each code file
+├── samples/                      # Sample video files (user-supplied or downloaded)
+│   ├── pov-urban-bike-ride-through-city-streets.mp4
+│   ├── vibrant-city-street-with-shops-and-pedestrians.mp4
+├── life_memorizer/               # Core source package
+│   ├── __init__.py               # Package initializer exporting modules
+│   ├── cli.py                    # Command-line interface definitions
+│   ├── config.py                 # Configuration settings loader & validator
+│   ├── embeddings.py             # Multi-modal embedding (Gemini / Matryoshka)
+│   ├── ingest.py                 # Ingestion pipeline coordinating media processing
+│   ├── media.py                  # Media processing utils (OpenCV, ffmpeg, PyTesseract)
+│   ├── mock_data.py              # Mock dataset for quick seeding and testing
+│   ├── models.py                 # Core Pydantic data schemas & enums
+│   ├── rag.py                    # Local Retrieval-Augmented Generation flows
+│   ├── recall.py                 # Recall engine for vector & hybrid queries
+│   └── store.py                  # Qdrant Edge vector store wrapper
+└── tests/                        # Test suite directory
+    ├── __init__.py               # Test package initializer
+    ├── conftest.py               # Shared pytest fixtures (mock store / mock embedder)
+    ├── test_embeddings.py        # Unit tests for real and fake embedding layers
+    ├── test_rag.py               # Unit tests for LocalRAG pipeline
+    ├── test_step5.py             # Unit tests for Step 5 (quantization & TTL pruning)
+    └── test_store_and_recall.py  # Unit tests for Qdrant storage and retrieval
+```
 
 ## Requirements
 
