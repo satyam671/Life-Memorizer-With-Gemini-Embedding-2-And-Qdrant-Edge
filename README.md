@@ -142,21 +142,22 @@ Run queries to recall specific moments:
 # Scenario A (Visual Search): Search image/video frames
 life-memorizer recall "where did I leave my keys?" --modality image
 ```
-Expected Output:
-
+#### Output:
+<img width="1090" height="337" alt="image" src="https://github.com/user-attachments/assets/bb18f38a-0a69-46fb-89cf-f3c75ce7cb70" />
 
 ```bash
 # Scenario B (Audio Search): Search conversation transcripts
 life-memorizer recall "what did Sarah say to buy?" --modality audio
 ```
-Expected Output:
+#### Output:
+<img width="1090" height="264" alt="image" src="https://github.com/user-attachments/assets/50c6bcde-b6bf-4298-8613-9ec6d907240b" />
 
 ```bash
 # Scenario C (Hybrid Search): Fuses OCR text & vision, filtered to Cafe
 life-memorizer recall "the cafe menu" --location Cafe --hybrid
 ```
-Expected Output:
-
+#### Output:
+<img width="1090" height="228" alt="image" src="https://github.com/user-attachments/assets/2f45819f-2651-4d53-9520-b376327f075c" />
 
 That's it — you now have a working offline memory assistant.
 
@@ -186,6 +187,8 @@ life-memorizer seed
 life-memorizer ask "where did I leave my keys?"
 life-memorizer ask "what did Sarah ask me to buy?"
 ```
+#### Output
+<img width="1246" height="221" alt="image" src="https://github.com/user-attachments/assets/d71ee58f-f597-4e16-81c9-bb7159a7b4d4" />
 
 ---
 
@@ -236,22 +239,44 @@ Provide a video file on your system to analyze. The video will be sampled into i
 # Point to any video file on your machine (e.g. samples/walk.mp4)
 life-memorizer ingest --video samples/pov-urban-bike-ride-through-city-streets.mp4 --location Home
 ```
+#### Output
+<img width="618" height="16" alt="image" src="https://github.com/user-attachments/assets/22f92e1f-d8db-4c5d-8105-9caa0d547776" />
+<img width="1164" height="255" alt="image" src="https://github.com/user-attachments/assets/8205de30-09d6-4c62-83e9-8cec4f239267" />
+All the ingested frames are stored locally whose path is specified in the output.
+
+---
 
 You supply your own media for `ingest`; nothing is bundled. Ingesting real video also needs
 the media extras: `pip install -e ".[media]"` (plus system `ffmpeg`, and `tesseract` if you
 want OCR). With the real API, semantic queries like "where did I leave my keys?" rank the
 correct moment first because Gemini understands meaning, not just words.
 
+---
 
 ### 5. Query Only the Ingested Video Frames
 Ask questions related to your ingested video:
+
 ```bash
 life-memorizer recall "where did i see the red car today while i was cycling?" --modality image
 ```
+#### Output
+<img width="1461" height="760" alt="ingested video 1" src="https://github.com/user-attachments/assets/0dc9d6f2-478d-42ee-9329-631f5eb41a8d" />
+---
 
 ```bash
 life-memorizer recall "where did i spotted a white truck today while i was cycling?" --modality image
 ```
+#### Output
+<img width="1452" height="762" alt="ingested video 2" src="https://github.com/user-attachments/assets/7232edb2-8ff1-469c-b245-3f2581b680f1" />
+---
+
+```bash
+life-memorizer recall "when did a couple crossed  me while I was walking on the city streets?" --modality image
+```
+#### Output
+<img width="1453" height="588" alt="ingested video 3" src="https://github.com/user-attachments/assets/50c628b8-d4da-4f3a-8de0-b607279ddbbc" />
+---
+
 
 *Thanks to our query filter, the search will **only** return matches from your ingested video files. Mock data seeded previously will be automatically excluded, ensuring accurate scores and correct moments are returned.*
 
@@ -270,8 +295,10 @@ life-memorizer ask "where did i spotted a white truck today while i was cycling?
 # (Requires GEMINI_API_KEY set in .env)
 # Powershell: $env:LIFE_MEMORIZER_RAG_BACKEND="gemini"
 # Bash: export LIFE_MEMORIZER_RAG_BACKEND=gemini
-life-memorizer ask "where did I see a couple walking in front of me?"
+life-memorizer ask "when did a couple crossed  me while I was walking on the city streets?"
 ```
+
+
 The answer cites the memories it used (`--show-sources`, on by default). If nothing relevant
 is found, it says it has no memory of that instead of guessing.
 
