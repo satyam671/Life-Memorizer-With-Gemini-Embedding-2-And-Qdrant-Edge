@@ -25,7 +25,6 @@ This guide provides step-by-step instructions for running the **Life Memorizer**
 - Qdrant Edge: Run a lightweight, blazing-fast vector database directly on an edge device (like an NVIDIA Jetson, Raspberry Pi, or local mobile device) without needing internet connectivity.
 
 
-![Architecture](architecture_ascii_diagram.png)
 
 ## Requirements
 
@@ -240,7 +239,6 @@ The answer cites the memories it used (`--show-sources`, on by default). If noth
 is found, it says it has no memory of that instead of guessing.
 
 
-
 ## Commands
 
 | Command | What it does |
@@ -255,7 +253,7 @@ is found, it says it has no memory of that instead of guessing.
 
 Run `life-memorizer --help` for everything.
 
-```
+
 
 ## Configuration
 
@@ -282,7 +280,6 @@ Settings come from environment variables (or a `.env` file). The defaults work o
 
 Each moment stores up to three named vectors — `video_frame`, `ambient_audio`, `ocr_log` —
 plus light metadata (timestamp, location, media path). Raw media never enters the database.
-
 
 ---
 
