@@ -36,7 +36,7 @@ This guide provides step-by-step instructions for running the **Life Memorizer**
 
 ```bash
 # Clone
-git clone git clone https://github.com/satyam671/https://github.com/satyam671/Life-Memorizer.git life-memorizer
+git clone https://github.com/satyam671/Life-Memorizer.git life-memorizer
 cd life-memorizer
 
 ## 📥 Installation
