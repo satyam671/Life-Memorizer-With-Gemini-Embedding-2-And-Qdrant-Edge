@@ -7,7 +7,7 @@ needed for storage or search.
 
 > "Where did I leave my keys?" · "What did Sarah say to buy?" · "Show me that cafe menu."
 
-# Life Memorizer — Step-by-Step Run Instructions
+# Step-by-Step Run Instructions
 
 This guide provides step-by-step instructions for running the **Life Memorizer** project in both of its operational modes:
 1. **Scenario 1: Mock / Offline Mode** (`LIFE_MEMORIZER_FAKE_EMBEDDINGS=1`) — Uses pre-scripted mock data and requires no API keys.
@@ -24,7 +24,7 @@ This guide provides step-by-step instructions for running the **Life Memorizer**
 - Gemini Embedding 2: Processes images, audio, and text into a unified semantic space natively—no need to manage separate CLIP, Whisper, and text-embedding pipelines.
 - Qdrant Edge: Run a lightweight, blazing-fast vector database directly on an edge device (like an NVIDIA Jetson, Raspberry Pi, or local mobile device) without needing internet connectivity.
 
-## Repository Structure Documentation
+## Repository Structure
 
 The repository follows a clean, modular python structure optimized for edge execution:
 
