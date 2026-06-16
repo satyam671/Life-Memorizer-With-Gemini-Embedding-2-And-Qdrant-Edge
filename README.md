@@ -73,7 +73,7 @@ Please refer to [ARCHITECTURE-DOCUMENTATION.md](ARCHITECTURE-DOCUMENTATION.md) f
 
 ```bash
 # Clone
-git clone https://github.com/satyam671/Life-Memorizer.git life-memorizer
+git clone https://github.com/satyam671/Life-Memorizer-With-Gemini-Embedding-2-And-Qdrant-Edge.git life-memorizer
 cd life-memorizer
 
 ## 📥 Installation
