@@ -1,3 +1,5 @@
+<img width="1672" height="941" alt="Featured display of multimodal input flow using qdrand edge and gemini embedding 2" src="https://github.com/user-attachments/assets/1294f9f8-e043-46af-8f06-73f80f2a2144" />
+
 # Life Memorizer
 
 A privacy-first, **offline** memory assistant for smart glasses (or any video clip).
